@@ -1,4 +1,6 @@
 def make_cvd_dataset():
+    import numpy as np
+    import pandas as pd
     '''Create different powers for creation of dataset. Dataset is a mock CVD plasma growth rate experiment.
     '''
 
