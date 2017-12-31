@@ -1,8 +1,8 @@
+import numpy as np
+import pandas as pd
+
 def make_cvd_dataset():
-    import numpy as np
-    import pandas as pd
-    '''Create different powers for creation of dataset. Dataset is a mock CVD plasma growth rate experiment.
-    '''
+    '''Create different powers for creation of dataset. Dataset is a mock CVD plasma growth rate experiment.'''
 
     x = np.array([8, 8, 8, 8, 10, 10, 10, 10, 12, 12, 12, 12, 14, 14, 14, 14])
 
@@ -10,9 +10,9 @@ def make_cvd_dataset():
     # TODO: Make RFPow dynamic
 
     RFPow8 = 5000 + 8 * (np.random.randn(1, 4) ** 2)
-    RFPow10 = 5200 + 8 * (np.random.randn(1, 4) ** 2)
-    RFPow12 = 5400 + 8 * (np.random.randn(1, 4) ** 2)
-    RFPow14 = 5600 + 8 * (np.random.randn(1, 4) ** 2)
+    RFPow10 = 5050 + 8 * (np.random.randn(1, 4) ** 2)
+    RFPow12 = 5100 + 8 * (np.random.randn(1, 4) ** 2)
+    RFPow14 = 5150 + 8 * (np.random.randn(1, 4) ** 2)
 
     # Append different powers together
 
@@ -27,3 +27,7 @@ def make_cvd_dataset():
     cvd_dataset['GrowthRate'] = RF
 
     return cvd_dataset
+
+if __name__ == "__main__":
+    cvd = make_cvd_dataset()
+    print(cvd)
