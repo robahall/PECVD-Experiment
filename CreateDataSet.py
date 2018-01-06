@@ -4,8 +4,8 @@ import pandas as pd
 def make_cvd_dataset():
     '''Create different powers for creation of dataset. Dataset is a mock CVD plasma growth rate experiment.'''
 
-    x = np.array([8, 8, 8, 8, 10, 10, 10, 10, 12, 12, 12, 12, 14, 14, 14, 14])
-
+    power = np.array([8, 8, 8, 8, 10, 10, 10, 10, 12, 12, 12, 12, 14, 14, 14, 14])
+    run_id = np.array([1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4])
     # Create normalized distributions for different RF powers
     # TODO: Make RFPow dynamic
 
@@ -23,7 +23,8 @@ def make_cvd_dataset():
 
     # Combine into dataset
 
-    cvd_dataset = pd.DataFrame(x, columns=['Power'])
+    cvd_dataset = pd.DataFrame(run_id, columns=['RunID'])
+    cvd_dataset['Power'] = power
     cvd_dataset['GrowthRate'] = RF
 
     return cvd_dataset
